@@ -11,11 +11,11 @@ import '../widgets/bottom_nav_bar.dart';
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
   final List<Widget> pageList = [
-    HomeScreen(),
-    SearchScreen(),
-    SearchScreen(),
-    CartScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
+    const SearchScreen(),
+    const CartScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

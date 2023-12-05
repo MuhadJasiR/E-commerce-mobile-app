@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:e_commerce/controllers/main_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +34,7 @@ class BottomNavBar extends StatelessWidget {
                   BottomNavIcons(
                     onTap: () {
                       value.pageIndex = 0;
+                      log("0");
                     },
                     icon:
                         value.pageIndex == 0 ? Icons.home_outlined : Icons.home,
@@ -39,6 +42,7 @@ class BottomNavBar extends StatelessWidget {
                   BottomNavIcons(
                     onTap: () {
                       value.pageIndex = 1;
+                      log("1");
                     },
                     icon: value.pageIndex == 1
                         ? Ionicons.search

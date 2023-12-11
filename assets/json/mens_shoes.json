@@ -1,0 +1,73 @@
+[
+    {
+        "id": "0",
+        "name": "ultraBoost shoes",
+        "category": "super",
+        "imageUrl": [
+            "https://www.pngkey.com/png/full/373-3735384_adidas-nmd-r1-shoes-adidas-nmd-r1-cq0760.png",
+            "https://png.pngtree.com/png-vector/20230501/ourmid/pngtree-sneakers-running-shoes-styles-png-image_7078176.png"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            { "size": "6.0", "isSelected": false },
+            { "size": "7.0", "isSelected": false },
+            { "size": "8.0", "isSelected": false }
+        ],
+        "price": "79.00",
+        "description": "put some pep in your step with the",
+        "title": "adidas Running shoes with cooling venire"
+    },
+    {
+        "id": "1",
+        "name": "another super shoes",
+        "category": "casual",
+        "imageUrl": [
+            "https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2021/02/ultra-boost-adidas-shoes-png_60209486a59ba.png",
+            "https://png.pngtree.com/png-clipart/20230506/original/pngtree-gradient-sneakers-running-shoes-png-image_9145065.png"
+        ],
+        "oldPrice": "1299.00",
+        "sizes": [
+            { "size": "7.0", "isSelected": false },
+            { "size": "8.0", "isSelected": false },
+            { "size": "9.0", "isSelected": false }
+        ],
+        "price": "59.00",
+        "description": "comfortable for everyday use",
+        "title": "Casual Shoes"
+    },
+    {
+        "id": "2",
+        "name": "running sneakers",
+        "category": "running",
+        "imageUrl": [
+            "https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2021/02/black-running-adidas-shoes_6022e755dbbf2.png",
+            "https://example.com/image6.jpg"
+        ],
+        "oldPrice": "1599.00",
+        "sizes": [
+            { "size": "8.0", "isSelected": false },
+            { "size": "9.0", "isSelected": false },
+            { "size": "10.0", "isSelected": false }
+        ],
+        "price": "89.00",
+        "description": "designed for high-performance running",
+        "title": "Running Sneakers"
+    },
+    {
+        "id": "3",
+        "name": "Super sneakers",
+        "category": "running",
+        "imageUrl": [
+            "https://www.pngall.com/wp-content/uploads/2/White-Sneakers-PNG-Clipart.png"
+        ],
+        "oldPrice": "1599.00",
+        "sizes": [
+            { "size": "8.0", "isSelected": false },
+            { "size": "9.0", "isSelected": false },
+            { "size": "10.0", "isSelected": false }
+        ],
+        "price": "89.00",
+        "description": "designed for high-performance running",
+        "title": "Running Sneakers"
+    }
+]

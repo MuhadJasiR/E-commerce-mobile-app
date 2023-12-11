@@ -18,7 +18,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MainScreenNotifier>(
       builder: (context, value, child) => Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey[300],
           bottomNavigationBar: SafeArea(
               child: Padding(
             padding: const EdgeInsets.all(8),

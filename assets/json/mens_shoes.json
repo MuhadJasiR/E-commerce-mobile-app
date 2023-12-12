@@ -69,5 +69,38 @@
         "price": "89.00",
         "description": "designed for high-performance running",
         "title": "Running Sneakers"
+    }, {
+        "id": "4",
+        "name": "Super sneakers",
+        "category": "running",
+        "imageUrl": [
+            "https://www.pngall.com/wp-content/uploads/2/White-Sneakers-PNG-Clipart.png"
+        ],
+        "oldPrice": "1599.00",
+        "sizes": [
+            { "size": "8.0", "isSelected": false },
+            { "size": "9.0", "isSelected": false },
+            { "size": "10.0", "isSelected": false }
+        ],
+        "price": "89.00",
+        "description": "designed for high-performance running",
+        "title": "Running Sneakers"
+    },    {
+        "id": "5",
+        "name": "running sneakers",
+        "category": "running",
+        "imageUrl": [
+            "https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2021/02/black-running-adidas-shoes_6022e755dbbf2.png",
+            "https://example.com/image6.jpg"
+        ],
+        "oldPrice": "1599.00",
+        "sizes": [
+            { "size": "8.0", "isSelected": false },
+            { "size": "9.0", "isSelected": false },
+            { "size": "10.0", "isSelected": false }
+        ],
+        "price": "89.00",
+        "description": "designed for high-performance running",
+        "title": "Running Sneakers"
     }
 ]

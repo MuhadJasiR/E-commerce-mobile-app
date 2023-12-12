@@ -94,7 +94,7 @@ class HomeWidget extends StatelessWidget {
                       final shoe = snapshot.data![index];
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: NewShoes(imageUrl: shoe.imageUrl[1]),
+                        child: NewShoes(imageUrl: shoe.imageUrl[0]),
                       );
                     },
                   );

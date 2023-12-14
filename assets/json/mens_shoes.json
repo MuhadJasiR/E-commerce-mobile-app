@@ -2,7 +2,7 @@
     {
         "id": "0",
         "name": "ultraBoost shoes",
-        "category": "super",
+        "category": "male",
         "imageUrl": [
             "https://www.pngkey.com/png/full/373-3735384_adidas-nmd-r1-shoes-adidas-nmd-r1-cq0760.png",
             "https://png.pngtree.com/png-vector/20230501/ourmid/pngtree-sneakers-running-shoes-styles-png-image_7078176.png"
@@ -20,7 +20,7 @@
     {
         "id": "1",
         "name": "another super shoes",
-        "category": "casual",
+        "category": "male",
         "imageUrl": [
             "https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2021/02/ultra-boost-adidas-shoes-png_60209486a59ba.png",
             "https://png.pngtree.com/png-clipart/20230506/original/pngtree-gradient-sneakers-running-shoes-png-image_9145065.png"
@@ -38,7 +38,7 @@
     {
         "id": "2",
         "name": "running sneakers",
-        "category": "running",
+        "category": "male",
         "imageUrl": [
             "https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2021/02/black-running-adidas-shoes_6022e755dbbf2.png",
             "https://example.com/image6.jpg"
@@ -56,7 +56,7 @@
     {
         "id": "3",
         "name": "Super sneakers",
-        "category": "running",
+        "category": "male",
         "imageUrl": [
             "https://www.pngall.com/wp-content/uploads/2/White-Sneakers-PNG-Clipart.png"
         ],
@@ -72,7 +72,7 @@
     }, {
         "id": "4",
         "name": "Super sneakers",
-        "category": "running",
+        "category": "male",
         "imageUrl": [
             "https://www.pngall.com/wp-content/uploads/2/White-Sneakers-PNG-Clipart.png"
         ],

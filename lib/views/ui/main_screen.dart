@@ -1,21 +1,20 @@
 import 'package:e_commerce/controllers/main_screen_provider.dart';
-import 'package:e_commerce/views/ui/cart_screen.dart';
 import 'package:e_commerce/views/ui/home_screen.dart';
-import 'package:e_commerce/views/ui/product_by_card.dart';
 import 'package:e_commerce/views/ui/profile_screen.dart';
 import 'package:e_commerce/views/ui/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/bottom_nav_bar.dart';
+import 'cart_page.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
   final List<Widget> pageList = [
     const HomeScreen(),
     const SearchScreen(),
-    const ProductByCard(),
-    const CartScreen(),
+    const SearchScreen(),
+    CartScreen(),
     const ProfileScreen(),
   ];
   @override

@@ -27,11 +27,11 @@ class Helper {
   //   return kidsList;
   // }
 
-  // Future<Sneakers> getMaleSneakersById(String id) async {
-  //   final data =
-  //       await the_bundle.rootBundle.loadString("assets/json/mens_shoes.json");
-  //   final maleList = sneakersFromJson(data);
-  //   final sneaker = maleList.firstWhere((sneaker) => sneaker.id == id);
-  //   return sneaker;
-  // }
+  Future<Sneakers> getMaleSneakersById(String id) async {
+    final data =
+        await the_bundle.rootBundle.loadString("assets/json/mens_shoes.json");
+    final maleList = sneakersFromJson(data);
+    final sneaker = maleList.firstWhere((sneaker) => sneaker.id == id);
+    return sneaker;
+  }
 }

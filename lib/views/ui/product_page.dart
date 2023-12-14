@@ -1,14 +1,17 @@
+import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/controllers/product_provider.dart';
 import 'package:e_commerce/models/sneaker_model.dart';
 import 'package:e_commerce/services/helper.dart';
 import 'package:e_commerce/shared/app_style.dart';
+import 'package:e_commerce/views/ui/favorite_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hive/hive.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/constants.dart';
 import '../widgets/check_out_button.dart';
 
 class ProductPage extends StatefulWidget {
@@ -31,8 +34,26 @@ class _ProductPageState extends State<ProductPage> {
     }
   }
 
+  final _favBox = Hive.box("fav_box");
+
   Future<void> _createCart(Map<String, dynamic> newCart) async {
     await _cartBox.add(newCart);
+  }
+
+  Future<void> _createFav(Map<String, dynamic> addFav) async {
+    await _favBox.add(addFav);
+    getFavorites();
+  }
+
+  getFavorites() {
+    final favData = _favBox.keys.map((key) {
+      final item = _favBox.get(key);
+
+      return {"key": key, "id": item["id"]};
+    }).toList();
+    favor = favData.toList();
+    ids = favor.map((item) => item["id"]).toList();
+    setState(() {});
   }
 
   @override
@@ -67,7 +88,7 @@ class _ProductPageState extends State<ProductPage> {
                             children: [
                               IconButton(
                                   onPressed: () {
-                                    productNotifier.shoeSizes.clear();
+                                    // productNotifier.shoeSizes.clear();
                                     Navigator.pop(context);
                                   },
                                   icon: const Icon(Icons.close)),
@@ -123,10 +144,34 @@ class _ProductPageState extends State<ProductPage> {
                                                     .height *
                                                 0.07,
                                             child: IconButton(
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                  Ionicons.heart_circle_outline,
-                                                ))),
+                                                onPressed: () {
+                                                  if (ids.contains(widget.id)) {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const Favorites(),
+                                                        ));
+                                                  } else {
+                                                    _createFav({
+                                                      "id": sneaker.id,
+                                                      "name": sneaker.name,
+                                                      "category":
+                                                          sneaker.category,
+                                                      "price": sneaker.price,
+                                                      "imageUrl":
+                                                          sneaker.imageUrl
+                                                    });
+                                                  }
+
+                                                  print(
+                                                      "evdeyum entering illa");
+                                                },
+                                                icon: ids.contains(widget.id)
+                                                    ? const Icon(
+                                                        AntIcons.heartFilled)
+                                                    : const Icon(AntIcons
+                                                        .heartOutlined))),
                                         Positioned(
                                             right: 0,
                                             left: 0,

@@ -1,9 +1,12 @@
+import 'package:antdesign_icons/antdesign_icons.dart';
+import 'package:e_commerce/models/constants.dart';
 import 'package:e_commerce/shared/app_style.dart';
+import 'package:e_commerce/views/ui/favorite_page.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
+import 'package:hive_flutter/adapters.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard(
+  const ProductCard(
       {super.key,
       required this.price,
       required this.category,
@@ -22,6 +25,24 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
+  final _favBox = Hive.box("fav_box");
+
+  Future<void> _createFav(Map<String, dynamic> addFav) async {
+    await _favBox.add(addFav);
+    getFavorites();
+  }
+
+  getFavorites() {
+    final favData = _favBox.keys.map((key) {
+      final item = _favBox.get(key);
+
+      return {"key": key, "id": item["id"]};
+    }).toList();
+    favor = favData.toList();
+    ids = favor.map((item) => item["id"]).toList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     bool selected = true;
@@ -45,7 +66,7 @@ class _ProductCardState extends State<ProductCard> {
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    margin: const EdgeInsets.symmetric(horizontal: 12),
                     height: MediaQuery.of(context).size.height * 0.23,
                     decoration: BoxDecoration(
                         image:
@@ -55,9 +76,30 @@ class _ProductCardState extends State<ProductCard> {
                       right: 10,
                       top: 10,
                       child: GestureDetector(
-                        onTap: null,
-                        child: const Icon(Ionicons.heart_circle_outline),
-                      ))
+                          onTap: () async {
+                            if (ids.contains(widget.id)) {
+                              print("id is there itself");
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Favorites(),
+                                  ));
+                            } else {
+                              print("id illa");
+
+                              _createFav({
+                                "id": widget.id,
+                                "name": widget.name,
+                                "category": widget.category,
+                                "price": widget.price,
+                                "imageUrl": widget.image
+                              });
+                            }
+                            print("clicking");
+                          },
+                          child: ids.contains(widget.id)
+                              ? const Icon(AntIcons.heartFilled)
+                              : const Icon(AntIcons.heartOutlined)))
                 ],
               ),
               Padding(
@@ -96,12 +138,16 @@ class _ProductCardState extends State<ProductCard> {
                         const SizedBox(
                           width: 5,
                         ),
-                        ChoiceChip(
-                          label: const Text(""),
-                          selected: selected,
-                          visualDensity: VisualDensity.compact,
-                          selectedColor: Colors.black,
+                        const CircleAvatar(
+                          radius: 13,
+                          backgroundColor: Colors.black,
                         )
+                        // ChoiceChip(
+                        //   label: const Text(""),
+                        //   selected: selected,
+                        //   visualDensity: VisualDensity.compact,
+                        //   selectedColor: Colors.black,
+                        // )
                       ],
                     )
                   ],

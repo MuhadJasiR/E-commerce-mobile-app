@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/shared/app_style.dart';
+import 'package:e_commerce/views/widgets/check_out_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -31,6 +32,7 @@ class CartScreen extends StatelessWidget {
     cart = cartData.reversed.toList();
 
     return Scaffold(
+      backgroundColor: const Color(0xFFE2E2E2),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Stack(
@@ -76,6 +78,7 @@ class CartScreen extends StatelessWidget {
                                       onPressed: (context) {},
                                       flex: 1,
                                       foregroundColor: Colors.white,
+                                      backgroundColor: Colors.black,
                                       icon: Icons.delete,
                                       label: "delete",
                                     )
@@ -85,7 +88,7 @@ class CartScreen extends StatelessWidget {
                                     MediaQuery.of(context).size.height * 0.11,
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
-                                    color: Colors.grey.shade500,
+                                    color: Colors.grey.shade200,
                                     boxShadow: const [
                                       BoxShadow(
                                           spreadRadius: 5,
@@ -101,12 +104,10 @@ class CartScreen extends StatelessWidget {
                                         Padding(
                                           padding: const EdgeInsets.all(12),
                                           child: CachedNetworkImage(
-                                            color: Colors.amberAccent,
-                                            imageUrl:
-                                                "https://www.pngkey.com/png/full/373-3735384_adidas-nmd-r1-shoes-adidas-nmd-r1-cq0760.png",
+                                            imageUrl: data["imageUrl"][0],
                                             width: 70,
                                             height: 70,
-                                            fit: BoxFit.fill,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                         Padding(
@@ -124,10 +125,74 @@ class CartScreen extends StatelessWidget {
                                                     16,
                                                     Colors.black,
                                                     FontWeight.bold),
-                                              )
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                data["category"],
+                                                style: fontStyle(
+                                                    14,
+                                                    Colors.grey,
+                                                    FontWeight.w600),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                data["price"],
+                                                style: fontStyle(
+                                                    16,
+                                                    Colors.black,
+                                                    FontWeight.w600),
+                                              ),
                                             ],
                                           ),
-                                        )
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(16))),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                InkWell(
+                                                  onTap: () {},
+                                                  child: const Icon(
+                                                    Icons.minimize,
+                                                    size: 20,
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  data["qty"].toString(),
+                                                  style: fontStyle(
+                                                      15,
+                                                      Colors.black,
+                                                      FontWeight.bold),
+                                                ),
+                                                InkWell(
+                                                  onTap: () {},
+                                                  child: const Icon(
+                                                    Icons.add,
+                                                    size: 20,
+                                                    color: Color.fromARGB(
+                                                        255, 56, 56, 56),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     )
                                   ],
@@ -139,6 +204,10 @@ class CartScreen extends StatelessWidget {
                       }),
                 ),
               ],
+            ),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: CheckOutButton(title: "Proceed to Checkout"),
             )
           ],
         ),

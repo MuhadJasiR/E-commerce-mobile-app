@@ -3,9 +3,7 @@ import 'package:e_commerce/services/helper.dart';
 import 'package:e_commerce/views/widgets/category_btm.dart';
 import 'package:e_commerce/views/widgets/customer_spacer.dart';
 import 'package:e_commerce/views/widgets/latest_shoe.dart';
-import 'package:e_commerce/views/widgets/stagger_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../shared/app_style.dart';
 
